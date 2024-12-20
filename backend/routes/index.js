@@ -7,6 +7,7 @@ const uploadRouter = require("./uploadImage");
 const ResumeRouter = require("./uploadResume");
 const downloadRouter = require("./download");
 const applicantRouter = require("./applicant");
+const dashboardRouter = require("./dashboard");
 
 const initRouter = (app) => {
   app.use("/api/auth", authRouter);
@@ -18,6 +19,7 @@ const initRouter = (app) => {
   app.use("/api/uploadResume", ResumeRouter);
   app.use("/api/download", downloadRouter);
   app.use("/api/applicants", applicantRouter);
+  app.use("/api/dashboard", dashboardRouter);
 };
 
 module.exports = initRouter;

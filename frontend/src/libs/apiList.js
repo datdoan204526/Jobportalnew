@@ -27,6 +27,7 @@ const apiList = {
   allRecruiter: `${server}/user/allRecruiter`,
   getIdRecruiter: `${server}/user/allRecruiter/:id`,
   getIdApplicant: `${server}/user/allApplicant/:id`,
+  getDashboard: `${server}/dashboard/summary`,
 };
 
 export default apiList;

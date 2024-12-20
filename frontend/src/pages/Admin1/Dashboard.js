@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import Recruiter from "./recruiter";
 import Job from "./Job";
+import Overview from "./overview"
 
 export function Dashboard() {
   const type = userType();
@@ -29,30 +30,40 @@ export function Dashboard() {
             } font-medium cursor-pointer px-4 py-4 text-sm text-gray-400`}
             onClick={() => setActive(0)}
           >
-            Applicant
+            Overview
           </button>
-
           <button
             className={`${
               active === 1 ? "border-b-2 border-money text-money" : ""
             } font-medium cursor-pointer px-4 py-4 text-sm text-gray-400`}
             onClick={() => setActive(1)}
           >
-            Recruiter
+            Applicant
           </button>
+
           <button
             className={`${
               active === 2 ? "border-b-2 border-money text-money" : ""
             } font-medium cursor-pointer px-4 py-4 text-sm text-gray-400`}
             onClick={() => setActive(2)}
           >
+            Recruiter
+          </button>
+          <button
+            className={`${
+              active === 3 ? "border-b-2 border-money text-money" : ""
+            } font-medium cursor-pointer px-4 py-4 text-sm text-gray-400`}
+            onClick={() => setActive(3)}
+          >
             Job
           </button>
         </div>
 
         {active === 0 ? (
-          <Applicant id={id} />
+          <Overview id={id} />
         ) : active === 1 ? (
+          <Applicant id={id} />
+        ) : active === 2 ? (
           <Recruiter id={id} />
         ) : (
           <Job id={id} />
